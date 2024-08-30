@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Scheduling System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bus Scheduling System</h1>
+        <form id="allocationForm">
+            <div class="form-group">
+                <label for="crew_id">Crew ID:</label>
+                <input type="text" id="crew_id" name="crew_id" required>
+            </div>
+            <button type="submit">Allocate Shift</button>
+        </form>
+        <div class="result" id="result"></div>
+        <button id="showSchedule">Show Schedule</button>
+        <div class="schedule" id="schedule"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

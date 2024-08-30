@@ -1,0 +1,21 @@
+Shift Hours,Route Number,Route Stops,Route Timings,Crew ID
+6:00 - 18:00,Route 2,"New Delhi Railway Station, Connaught Place, India Gate, Raisina Hill, Parliament House","06:15, 07:15, 08:15, 09:15, 10:15",C1A2B3
+9:00 - 18:00,Route 4,"Dwarka Sector 21, Dwarka Sector 6, Dwarka Sector 12, Dwarka Sector 16, Dwarka Sector 25","06:45, 07:45, 08:45, 09:45, 10:45",C1A2B3
+10:00 - 16:00,Route 1,"Delhi Gate, Red Fort, Chandni Chowk, Raj Ghat, India Gate","06:00, 07:00, 08:00, 09:00, 10:00",C2D4E5
+10:00 - 16:00,Route 5,"Noida Sector 15, Noida Sector 18, Noida Sector 27, Noida Sector 34, Noida Sector 45","07:00, 08:00, 09:00, 10:00, 11:00",C2D4E5
+9:00 - 15:00,Route 3,"IGI Airport, Aerocity, CSTC, Dhirpur, Mundka","06:30, 07:30, 08:30, 09:30, 10:30",C3F6G7
+7:00 - 17:00,Route 3,"IGI Airport, Aerocity, CSTC, Dhirpur, Mundka","11:30, 12:30, 13:30, 14:30, 15:30",C3F6G7
+10:00 - 17:00,Route 3,"IGI Airport, Aerocity, CSTC, Dhirpur, Mundka","16:30, 17:30, 18:30, 19:30, 20:30",C3F6G7
+9:00 - 14:00,Route 5,"Noida Sector 15, Noida Sector 18, Noida Sector 27, Noida Sector 34, Noida Sector 45","12:00, 13:00, 14:00, 15:00, 16:00",C2D4E5
+7:00 - 18:00,Route 4,"Dwarka Sector 21, Dwarka Sector 6, Dwarka Sector 12, Dwarka Sector 16, Dwarka Sector 25","11:45, 12:45, 13:45, 14:45, 15:45",C1A2B3
+9:00 - 18:00,Route 6,"Kashmere Gate, Mori Gate, Delhi University, Kamla Nagar, Sarai Rohilla","07:15, 08:15, 09:15, 10:15, 11:15",C4H8I9
+9:00 - 15:00,Route 3,"IGI Airport, Aerocity, CSTC, Dhirpur, Mundka","09:30, 10:30, 11:30, 12:30, 13:30",C3F6G7
+10:00 - 14:00,Route 3,"IGI Airport, Aerocity, CSTC, Dhirpur, Mundka","14:30, 15:30, 16:30, 17:30, 18:30",C3F6G7
+10:00 - 17:00,Route 7,"Karol Bagh, Paharganj, Connaught Place, Rajiv Chowk, Jama Masjid","07:30, 08:30, 09:30, 10:30, 11:30",C5J0K1
+8:00 - 16:00,Route 1,"Delhi Gate, Red Fort, Chandni Chowk, Raj Ghat, India Gate","12:00, 13:00, 14:00, 15:00, 16:00",C2D4E5
+10:00 - 14:00,Route 5,"Noida Sector 15, Noida Sector 18, Noida Sector 27, Noida Sector 34, Noida Sector 45","16:00, 17:00, 18:00, 19:00, 20:00",C2D4E5
+9:00 - 15:00,Route 8,"Saket, Malviya Nagar, Kalkaji, Okhla, Govindpuri","07:45, 08:45, 09:45, 10:45, 11:45",C6L3M2
+7:00 - 18:00,Route 8,"Saket, Malviya Nagar, Kalkaji, Okhla, Govindpuri","12:45, 13:45, 14:45, 15:45, 16:45",C6L3M2
+9:00 - 18:00,Route 3,"IGI Airport, Aerocity, CSTC, Dhirpur, Mundka","17:30, 18:30, 19:30, 20:30, 21:30",C3F6G7
+10:00 - 18:00,Route 4,"Dwarka Sector 21, Dwarka Sector 6, Dwarka Sector 12, Dwarka Sector 16, Dwarka Sector 25","13:45, 14:45, 15:45, 16:45, 17:45",C1A2B3
+10:00 - 18:00,Route 2,"New Delhi Railway Station, Connaught Place, India Gate, Raisina Hill, Parliament House","11:15, 12:15, 13:15, 14:15, 15:15",C1A2B3
