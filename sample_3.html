@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Route Visualization</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        #map {
+            height: 80vh;
+            width: 100%;
+        }
+
+        header {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        #controls {
+            padding: 10px;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        #controls input {
+            margin: 5px;
+            padding: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bus Route Visualization</h1>
+</header>
+
+<div id="controls">
+    <input type="text" id="start" placeholder="Enter start point (e.g., New Delhi Railway Station)">
+    <input type="text" id="end" placeholder="Enter end point (e.g., India Gate)">
+    <button onclick="findRoute()">Find Route</button>
+</div>
+
+<div id="map"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+<script>
+    let routesData = [];
+
+    function loadCSV() {
+        // Sample data to simulate loading from CSV
+        routesData = [
+            {
+                shiftHours: '6:00 AM - 10:00 PM',
+                routeNumber: '1',
+                routeStops: ['New Delhi Railway Station', 'Connaught Place', 'India Gate', 'Parliament House'],
+                routeTimings: 'Every 30 minutes',
+                coordinates: convertToCoordinates(['New Delhi Railway Station', 'Connaught Place', 'India Gate', 'Parliament House'])
+            },
+            {
+                shiftHours: '7:00 AM - 9:00 PM',
+                routeNumber: '2',
+                routeStops: ['Connaught Place', 'Raisina Hill', 'Parliament House'],
+                routeTimings: 'Every 20 minutes',
+                coordinates: convertToCoordinates(['Connaught Place', 'Raisina Hill', 'Parliament House'])
+            }
+        ];
+        console.log('Routes Data:', routesData); // Debugging output
+    }
+
+    function convertToCoordinates(stops) {
+        const coordinatesMap = {
+            "New Delhi Railway Station": { lat: 28.6139, lng: 77.2090 },
+            "Connaught Place": { lat: 28.6315, lng: 77.2167 },
+            "India Gate": { lat: 28.6129, lng: 77.2295 },
+            "Raisina Hill": { lat: 28.6143, lng: 77.2029 },
+            "Parliament House": { lat: 28.6172, lng: 77.2083 }
+        };
+        return stops.map(stop => coordinatesMap[stop]).filter(coord => coord !== undefined);
+    }
+
+    function initMap() {
+        // Initialize the map, centered at a specific latitude and longitude
+        window.map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: 28.6139, lng: 77.2090 }, // Center on a specific coordinate
+            zoom: 13,
+        });
+
+        loadCSV(); // Load mock CSV data
+    }
+
+    function findRoute() {
+        let startPoint = document.getElementById('start').value.trim();
+        let endPoint = document.getElementById('end').value.trim();
+
+        // Find a route that includes both the start and end points
+        let route = routesData.find(route =>
+            route.routeStops.includes(startPoint) && route.routeStops.includes(endPoint)
+        );
+
+        if (route) {
+            displayRoute(route);
+        } else {
+            alert('No matching route found!');
+        }
+    }
+
+    function displayRoute(route) {
+        if (!route.coordinates || route.coordinates.length === 0) {
+            alert('No valid coordinates found for this route!');
+            return;
+        }
+
+        // Reinitialize the map to clear previous routes
+        const map = new google.maps.Map(document.getElementById("map"), {
+            center: route.coordinates[0], // Center map on the first coordinate of the route
+            zoom: 13,
+        });
+
+        // Draw the bus route on the map
+        const busRoute = new google.maps.Polyline({
+            path: route.coordinates,
+            geodesic: true,
+            strokeColor: "#FF0000",
+            strokeOpacity: 1.0,
+            strokeWeight: 2,
+        });
+
+        busRoute.setMap(map);
+
+        // Add markers for each bus stop along the route
+        route.coordinates.forEach((coordinate, index) => {
+            new google.maps.Marker({
+                position: coordinate,
+                map: map,
+                title: `Bus Stop ${index + 1}`,
+            });
+        });
+    }
+</script>
+
+<!-- Load the Google Maps API -->
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAC3Oc01wiyYlUw4HaLhkVu--VKlUYJynw&callback=initMap">
+</script>
+
+</body>
+</html>
